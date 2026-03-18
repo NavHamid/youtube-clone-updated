@@ -1,0 +1,1016 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Youtube Clone</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="styles/general.css" />
+    <link rel="stylesheet" href="styles/header.css" />
+    <link rel="stylesheet" href="styles/sidebar.css" />
+    <link rel="stylesheet" href="styles/category.css" />
+    <link rel="stylesheet" href="styles/video.css" />
+    <link rel="stylesheet" href="styles/responsive.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="left-section">
+        <img class="hamburger-menu" src="icons/hamburger-menu.svg" />
+        <img
+          class="youtube-logo"
+          src="icons/youtube-logo.svg"
+          data-light-logo="icons/youtube-logo.svg"
+          data-dark-logo="icons/youtube-logo-dark.svg"
+          alt="YouTube"
+        />
+        <div class="country-code">IN</div>
+      </div>
+      <div class="middle-section">
+        <div class="search-container">
+          <span class="search-left-icon">
+            <img src="icons/search.svg" alt="Search" />
+          </span>
+
+          <input class="Search-bar" type="text" placeholder="Search" />
+
+          <button class="search-button">
+            <img class="search-icon" src="icons/search.svg" />
+            <div class="tooltip">Search</div>
+          </button>
+
+          <button class="voice-search-button">
+            <img class="voice-search-icon" src="icons/voice-search-icon.svg" />
+            <div class="tooltip">Search with your voice</div>
+          </button>
+        </div>
+      </div>
+      <div class="right-section">
+        <div class="upload-icon-container">
+          <img class="upload-icon" src="icons/upload.svg" />
+          <div class="tooltip">Create</div>
+        </div>
+
+        <div class="youtube-apps-icon-container">
+          <img class="youtube-apps-icon" src="icons/youtube-apps.svg" />
+          <div class="tooltip">YouTube Apps</div>
+        </div>
+
+        <div class="notifications-icon-container">
+          <img class="notifications-icon" src="icons/notifications.svg" />
+          <div class="notifications-count">3</div>
+          <div class="tooltip">Notifications</div>
+        </div>
+        <img
+          class="current-user-picture"
+          src="/thumbnails/profile-picture.jpg"
+        />
+      </div>
+    </header>
+
+    <!-- Categories / Tabs below header -->
+    <div class="category-bar">
+      <!-- Left Scroll Arrow -->
+      <div class="left-arrow-container" id="left-scroll-btn">
+        <i class="fa-solid fa-chevron-left"></i>
+      </div>
+
+      <div class="category-scroll" id="category-scroll-track">
+        <div class="category-item active">All</div>
+        <div class="category-item">Music</div>
+        <div class="category-item">Podcasts</div>
+        <div class="category-item">Webtoons</div>
+        <div class="category-item">Mixes</div>
+        <div class="category-item">Gaming</div>
+        <div class="category-item">Novel</div>
+        <div class="category-item">JavaScript</div>
+        <div class="category-item">Software framework</div>
+        <div class="category-item">AI</div>
+        <div class="category-item">Live</div>
+        <div class="category-item">Camping</div>
+        <div class="category-item">Calculation</div>
+        <div class="category-item">Rhythm & Blues</div>
+        <div class="category-item">Dance-Pop</div>
+        <div class="category-item">Pop Music</div>
+        <div class="category-item">Comedy</div>
+        <div class="category-item">Nature</div>
+        <div class="category-item">Recently uploaded</div>
+        <div class="category-item">Watched</div>
+        <div class="category-item">New to you</div>
+      </div>
+
+      <!-- Right Scroll Arrow -->
+      <div class="right-arrow-container" id="right-scroll-btn">
+        <i class="fa-solid fa-chevron-right"></i>
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <div class="sidebar-link">
+        <img src="icons/home.svg" />
+        <div>Home</div>
+      </div>
+      <div class="sidebar-link">
+        <img src="icons/explore.svg" />
+        <div>Explore</div>
+      </div>
+      <div class="sidebar-link">
+        <img src="icons/subscriptions.svg" />
+        <div>Subscriptions</div>
+      </div>
+      <div class="sidebar-link">
+        <img src="icons/originals.svg" />
+        <div>Originals</div>
+      </div>
+      <div class="sidebar-link">
+        <img src="icons/youtube-music.svg" />
+        <div>YouTube Music</div>
+      </div>
+      <div class="sidebar-link">
+        <img src="icons/library.svg" />
+        <div>Library</div>
+      </div>
+    </div>
+
+    <!-- Expanded Sidebar Overlay & Container -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    <nav class="expanded-sidebar" id="expanded-sidebar">
+      <!-- Logo Header -->
+      <div class="expanded-sidebar-header">
+        <img
+          class="hamburger-menu"
+          id="close-sidebar-btn"
+          src="icons/hamburger-menu.svg"
+          alt="Menu"
+          style="cursor: pointer"
+        />
+        <img
+          class="youtube-logo"
+          src="icons/youtube-logo.svg"
+          data-light-logo="icons/youtube-logo.svg"
+          data-dark-logo="icons/youtube-logo-dark.svg"
+          alt="YouTube"
+        />
+        <div class="country-code expanded-country-code">IN</div>
+      </div>
+
+      <div class="expanded-sidebar-content">
+        <div class="sidebar-section">
+          <a href="#" class="expanded-link"
+            ><i class="fa-solid fa-house"></i> Home</a
+          >
+          <a href="#" class="expanded-link"
+            ><i class="fa-solid fa-bolt"></i> Shorts</a
+          >
+          <a href="#" class="expanded-link"
+            ><i class="fa-solid fa-tv"></i> Subscriptions</a
+          >
+        </div>
+
+        <hr class="sidebar-divider" />
+
+        <div class="sidebar-section">
+          <h3 class="sidebar-title">
+            You
+            <i
+              class="fa-solid fa-chevron-right"
+              style="font-size: 12px; margin-left: 8px"
+            ></i>
+          </h3>
+          <a href="#" class="expanded-link"
+            ><i class="fa-solid fa-clock-rotate-left"></i> History</a
+          >
+          <a href="#" class="expanded-link"
+            ><i class="fa-brands fa-youtube"></i> Playlists</a
+          >
+          <a href="#" class="expanded-link"
+            ><i class="fa-solid fa-clock"></i> Watch later</a
+          >
+          <a href="#" class="expanded-link"
+            ><i class="fa-solid fa-thumbs-up"></i> Liked videos</a
+          >
+          <a href="#" class="expanded-link"
+            ><i class="fa-solid fa-download"></i> Downloads</a
+          >
+        </div>
+
+        <hr class="sidebar-divider" />
+
+        <div class="sidebar-section">
+          <h3 class="sidebar-title">Subscriptions</h3>
+          <a href="#" class="expanded-link"
+            ><img src="channel-picture/channel-1.jpg" class="sub-img" /> Baig</a
+          >
+          <a href="#" class="expanded-link"
+            ><img src="channel-picture/channel-2.jpg" class="sub-img" /> Website
+            Learners</a
+          >
+          <a href="#" class="expanded-link"
+            ><img src="channel-picture/channel-3.jpg" class="sub-img" /> Kevin
+            Stratvert</a
+          >
+          <a href="#" class="expanded-link"
+            ><img src="channel-picture/channel-4.jpg" class="sub-img" /> Husain
+            Sir</a
+          >
+          <a href="#" class="expanded-link"
+            ><img src="channel-picture/channel-5.jpg" class="sub-img" /> Vishal
+            khune</a
+          >
+        </div>
+
+        <hr class="sidebar-divider" />
+
+        <div class="sidebar-section">
+          <h3 class="sidebar-title">Explore</h3>
+          <a href="#" class="expanded-link"
+            ><i class="fa-solid fa-fire"></i> Trending</a
+          >
+          <a href="#" class="expanded-link"
+            ><i class="fa-solid fa-bag-shopping"></i> Shopping</a
+          >
+          <a href="#" class="expanded-link"
+            ><i class="fa-solid fa-music"></i> Music</a
+          >
+          <a href="#" class="expanded-link"
+            ><i class="fa-solid fa-clapperboard"></i> Movies</a
+          >
+        </div>
+
+        <hr class="sidebar-divider" />
+
+        <div class="sidebar-section">
+          <h3 class="sidebar-title">More from YouTube</h3>
+          <a href="#" class="expanded-link"
+            ><i class="fa-brands fa-youtube" style="color: red"></i> YouTube
+            Premium</a
+          >
+          <a href="#" class="expanded-link"
+            ><i class="fa-solid fa-music" style="color: red"></i> YouTube
+            Music</a
+          >
+          <a href="#" class="expanded-link"
+            ><i class="fa-brands fa-youtube" style="color: red"></i> YouTube
+            Kids</a
+          >
+        </div>
+
+        <hr class="sidebar-divider" />
+
+        <div class="sidebar-section">
+          <a href="#" class="expanded-link"
+            ><i class="fa-solid fa-gear"></i> Settings</a
+          >
+          <a href="#" class="expanded-link"
+            ><i class="fa-regular fa-flag"></i> Report history</a
+          >
+          <a href="#" class="expanded-link"
+            ><i class="fa-solid fa-circle-question"></i> Help</a
+          >
+          <a href="#" class="expanded-link"
+            ><i class="fa-solid fa-circle-exclamation"></i> Send feedback</a
+          >
+        </div>
+        <hr class="sidebar-divider" />
+
+        <!-- Toggle section at bottom left -->
+        <div class="sidebar-section bottom-toggle-container">
+          <span>Dark Mode</span>
+          <label class="switch">
+            <input type="checkbox" id="theme-toggle" />
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+    </nav>
+
+    <div class="video-grid">
+      <div class="video-card">
+        <div class="video-preview">
+          <div class="thumbnail-row">
+            <a href="https://youtu.be/ULvplwBTbQk?si=iwLlttg2EYpDhnwk">
+              <img class="thumbnail" src="/thumbnails/thumbnail-1.jpg" />
+            </a>
+            <div class="video-time">1:30:44</div>
+          </div>
+
+          <div class="video-info-grid">
+            <div class="channel-picture">
+              <img
+                class="profile-picture"
+                src="/channel-picture/channel-1.jpg"
+              />
+            </div>
+            <div class="video-info">
+              <p class="video-title">
+                <a href="https://youtu.be/ULvplwBTbQk?si=iwLlttg2EYpDhnwk">
+                  Sunita Williams On 286 Days in Space, NASA Missions &
+                  Astronaut Mindset | FO461 Raj Shamani
+                </a>
+              </p>
+              <p class="video-author">Raj Shamani</p>
+              <p class="video-stats">5.6m views &#183; 1 months ago</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-preview">
+          <div class="thumbnail-row">
+            <a href="https://youtu.be/bMGoMu-CxMY?si=74NdO28T0yL7WCKx">
+              <img class="thumbnail" src="/thumbnails/thumbnail-2.webp" />
+            </a>
+            <div class="video-time">14:52</div>
+          </div>
+
+          <div class="video-info-grid">
+            <div class="channel-picture">
+              <img
+                class="profile-picture"
+                src="./channel-picture/channel-2.jpg"
+              />
+            </div>
+            <div class="video-info">
+              <p class="video-title">
+                <a href="https://youtu.be/bMGoMu-CxMY?si=74NdO28T0yL7WCKx">
+                  How NOT To Order At An Indian Restaurant! - Trevor Noah (From
+                  'I Wish You Would' on Netflix)
+                </a>
+              </p>
+              <p class="video-author">Trevor Noah</p>
+              <p class="video-stats">9.8m views&#183; 11 months ago</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-preview">
+          <div class="thumbnail-row">
+            <a href="https://youtu.be/HBFMysfLlJU?si=NI-u6FW88HTauDfz"
+              ><img class="thumbnail" src="/thumbnails/thumbnail-3.webp"
+            /></a>
+            <div class="video-time">59:23</div>
+          </div>
+          <div class="video-info-grid">
+            <div class="channel-picture">
+              <img
+                class="profile-picture"
+                src="/channel-picture/channel-3.jpg"
+              />
+            </div>
+            <div class="video-info">
+              <p class="video-title">
+                <a href="https://youtu.be/HBFMysfLlJU?si=NI-u6FW88HTauDfz">
+                  Most Watched of 2021 - Key & Peele
+                </a>
+              </p>
+              <p class="video-author">Key & Peele</p>
+              <p class="video-stats">42M views &#183; 4 years ago</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-preview">
+          <div class="thumbnail-row">
+            <a href="https://youtu.be/Gaf_jCnA6mc?si=NoLfJXfMbLIefHVz"
+              ><img class="thumbnail" src="/thumbnails/thumbnail-4.webp"
+            /></a>
+            <div class="video-time">27:50</div>
+          </div>
+
+          <div class="video-info-grid">
+            <div class="channel-picture">
+              <a href="https://youtu.be/Gaf_jCnA6mc?si=NoLfJXfMbLIefHVz">
+                <img
+                  class="profile-picture"
+                  src="/channel-picture/channel-4.jpg"
+              /></a>
+            </div>
+            <div class="video-info">
+              <p class="video-title">
+                <a href="https://youtu.be/Gaf_jCnA6mc?si=NoLfJXfMbLIefHVz">
+                  ChatGPT Tutorial: How to Use Chat GPT For Beginners
+                </a>
+              </p>
+              <p class="video-author">Charlie Chang</p>
+              <p class="video-stats">4.5M views &#183; 2 years ago</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-preview">
+          <div class="thumbnail-row">
+            <a href="https://youtu.be/WwA_7QyqtGI?si=gIH3DoWvPk79hWYY"
+              ><img class="thumbnail" src="/thumbnails/thumbnail-5.jpg"
+            /></a>
+            <div class="video-time">1:14:54</div>
+          </div>
+
+          <div class="video-info-grid">
+            <div class="channel-picture">
+              <img
+                class="profile-picture"
+                src="/channel-picture/channel-5.jpg"
+              />
+            </div>
+            <div class="video-info">
+              <p class="video-title">
+                <a href="https://youtu.be/WwA_7QyqtGI?si=gIH3DoWvPk79hWYY">
+                  UNREAL AMAZON – Nature’s Most Dangerous Paradise (Full
+                  Documentary)
+                </a>
+              </p>
+              <p class="video-author">Travpedia</p>
+              <p class="video-stats">3Mviews &#183; 4 months ago</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-preview">
+          <div class="thumbnail-row">
+            <a href="https://youtu.be/AFuE1LRxm80?si=Cg4_873gxku59kqM">
+              <img class="thumbnail" src="/thumbnails/thumbnail-6.webp"
+            /></a>
+            <div class="video-time">2:02</div>
+          </div>
+
+          <div class="video-info-grid">
+            <div class="channel-picture">
+              <img
+                class="profile-picture"
+                src="/channel-picture/channel-6.jpg"
+              />
+            </div>
+            <div class="video-info">
+              <p class="video-title">
+                <a href="https://youtu.be/AFuE1LRxm80?si=Cg4_873gxku59kqM">
+                  WAR MACHINE | Official Trailer | Netflix
+                </a>
+              </p>
+              <p class="video-author">Netflix</p>
+              <p class="video-stats">15M views &#183; 1 months ago</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-preview">
+          <div class="thumbnail-row">
+            <a href="https://youtu.be/zHt1IEgEISo?si=wTnqs8fKdfPdLmkc"
+              ><img class="thumbnail" src="/thumbnails/thumbnail-7.jpg"
+            /></a>
+            <div class="video-time">33:48</div>
+          </div>
+
+          <div class="video-info-grid">
+            <div class="channel-picture">
+              <img
+                class="profile-picture"
+                src="/channel-picture/channel-7.jpg"
+              />
+            </div>
+            <div class="video-info">
+              <p class="video-title">
+                <a href="https://youtu.be/zHt1IEgEISo?si=wTnqs8fKdfPdLmkc">
+                  Forging a Knife & Survival Camping Alone in the Wilderness
+                </a>
+              </p>
+              <p class="video-author">Outdoor Boys</p>
+              <p class="video-stats">30M views &#183; 1 years ago</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-preview">
+          <div class="thumbnail-row">
+            <a href="https://youtu.be/w2Ov5jzm3j8?si=iq-THeasYBzDUXbT">
+              <img class="thumbnail" src="/thumbnails/thumbnail-8.webp" />
+            </a>
+            <div class="video-time">5:09</div>
+          </div>
+
+          <div class="video-info-grid">
+            <div class="channel-picture">
+              <a href="https://youtu.be/w2Ov5jzm3j8?si=iq-THeasYBzDUXbT">
+                <img
+                  class="profile-picture"
+                  src="/channel-picture/channel-8.jpg"
+                />
+              </a>
+            </div>
+            <div class="video-info">
+              <p class="video-title">
+                <a href="https://youtu.be/w2Ov5jzm3j8?si=iq-THeasYBzDUXbT">
+                  Lil Nas X - Old Town Road (Official Movie) ft. Billy Ray Cyrus
+                </a>
+              </p>
+              <p class="video-author">Lil Nas X</p>
+              <p class="video-stats">731M views &#183; 6 years ago</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-preview">
+          <div class="thumbnail-row">
+            <a href="https://youtu.be/ixmxOlcrlUc?si=DMWp1uKpOZk8KdHR">
+              <img class="thumbnail" src="/thumbnails/thumbnail-9.webp" />
+            </a>
+            <div class="video-time">13:18</div>
+          </div>
+
+          <div class="video-info-grid">
+            <div class="channel-picture">
+              <img
+                class="profile-picture"
+                src="/channel-picture/channel-9.jpeg"
+              />
+            </div>
+            <div class="video-info">
+              <p class="video-title">
+                <a href="https://youtu.be/ixmxOlcrlUc?si=DMWp1uKpOZk8KdHR">
+                  The SECRET to Super Human STRENGTH
+                </a>
+              </p>
+              <p class="video-author">THENX</p>
+              <p class="video-stats">24M views &#183; 7 years ago</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-preview">
+          <div class="thumbnail-row">
+            <a href="https://youtu.be/R2vXbFp5C9o?si=qPEyBZf3i6VHJ763">
+              <img class="thumbnail" src="/thumbnails/thumbnail-10.webp" />
+            </a>
+            <div class="video-time">7:53</div>
+          </div>
+
+          <div class="video-info-grid">
+            <div class="channel-picture">
+              <img
+                class="profile-picture"
+                src="/channel-picture/channel-10.jpeg"
+              />
+            </div>
+            <div class="video-info">
+              <p class="video-title">
+                <a href="https://youtu.be/R2vXbFp5C9o?si=qPEyBZf3i6VHJ763">
+                  How The World's Largest Cruise Ship Makes 30,000 Meals Every
+                  Day
+                </a>
+              </p>
+              <p class="video-author">Business Insider</p>
+              <p class="video-stats">22M views &#183; 6 years ago</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-preview">
+          <div class="thumbnail-row">
+            <a href="https://youtu.be/0nZuYyXET3s?si=U3ooovsw713mVTA5">
+              <img class="thumbnail" src="/thumbnails/thumbnail-11.webp" />
+            </a>
+            <div class="video-time">4:11</div>
+          </div>
+
+          <div class="video-info-grid">
+            <div class="channel-picture">
+              <img
+                class="profile-picture"
+                src="/channel-picture/channel-11.jpeg"
+              />
+            </div>
+            <div class="video-info">
+              <p class="video-title">
+                <a href="https://youtu.be/0nZuYyXET3s?si=U3ooovsw713mVTA5">
+                  Dubai's Crazy Underwater Train and Other Things #Only in Dubai
+                </a>
+              </p>
+              <p class="video-author">Destination Tips</p>
+              <p class="video-stats">4.7M views &#183; 5 years ago</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-preview">
+          <div class="thumbnail-row">
+            <a href="https://youtu.be/9iMGFqMmUFs?si=J4Bmbc07wTTxni8n">
+              <img class="thumbnail" src="/thumbnails/thumbnail-12.webp" />
+            </a>
+
+            <div class="video-time">4:52</div>
+          </div>
+
+          <div class="video-info-grid">
+            <div class="channel-picture">
+              <img
+                class="profile-picture"
+                src="/channel-picture/channel-12.jpeg"
+              />
+            </div>
+            <div class="video-info">
+              <p class="video-title">
+                <a href="https://youtu.be/9iMGFqMmUFs?si=J4Bmbc07wTTxni8n">
+                  What would happen if you didn’t drink water? - Mia Nacamulli
+                </a>
+              </p>
+              <p class="video-author">TED-Ed</p>
+              <p class="video-stats">23M views &#183; 9 years ago</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-preview">
+          <div class="thumbnail-row">
+            <a href="https://www.youtube.com/watch?v=yXWw0_UfSFg">
+              <img class="thumbnail" src="/thumbnails/thumbnail-13.webp" />
+            </a>
+            <div class="video-time">20:00</div>
+          </div>
+
+          <div class="video-info-grid">
+            <div class="channel-picture">
+              <img
+                class="profile-picture"
+                src="/channel-picture/channel-13.jpeg"
+              />
+            </div>
+            <div class="video-info">
+              <p class="video-title">
+                <a href="https://www.youtube.com/watch?v=yXWw0_UfSFg">
+                  Anything You Can Fit In The Circle I’ll Pay For
+                </a>
+              </p>
+              <p class="video-author">MrBeast</p>
+              <p class="video-stats">16M views &#183; 3 years ago</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-preview">
+          <div class="thumbnail-row">
+            <a href="https://youtu.be/n2RNcPRtAiY?si=TSCT951ksw9XinkE">
+              <img class="thumbnail" src="/thumbnails/thumbnail-14.webp" />
+            </a>
+            <div class="video-time">14:20</div>
+          </div>
+
+          <div class="video-info-grid">
+            <div class="channel-picture">
+              <img
+                class="profile-picture"
+                src="/channel-picture/channel-14.jpeg"
+              />
+            </div>
+            <div class="video-info">
+              <p class="video-title">
+                <a href="https://youtu.be/n2RNcPRtAiY?si=TSCT951ksw9XinkE">
+                  Talking Tech and AI with Google CEO Sundar Pichai!
+                </a>
+              </p>
+              <p class="video-author">Marques Brownlee</p>
+              <p class="video-stats">4.3M views &#183; 4 years ago</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-preview">
+          <div class="thumbnail-row">
+            <a href="https://youtu.be/86CQq3pKSUw?si=vnBfRi0zpAI7-D1A">
+              <img class="thumbnail" src="/thumbnails/thumbnail-15.webp" />
+            </a>
+            <div class="video-time">11:16</div>
+          </div>
+
+          <div class="video-info-grid">
+            <div class="channel-picture">
+              <img
+                class="profile-picture"
+                src="/channel-picture/channel-15.jpeg"
+              />
+            </div>
+            <div class="video-info">
+              <p class="video-title">
+                <a href="https://youtu.be/86CQq3pKSUw?si=vnBfRi0zpAI7-D1A">
+                  Kadane's Algorithm to Maximum Sum Subarray Problem
+                </a>
+              </p>
+              <p class="video-author">CS Dojo</p>
+              <p class="video-stats">770k views &#183; 10 years ago</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-preview">
+          <div class="thumbnail-row">
+            <a href="https://youtu.be/fNVa1qMbF9Y?si=gUm2GkZNwqC1CGhB">
+              <img class="thumbnail" src="/thumbnails/thumbnail-16.webp" />
+            </a>
+            <div class="video-time">10:13</div>
+          </div>
+
+          <div class="video-info-grid">
+            <div class="channel-picture">
+              <img
+                class="profile-picture"
+                src="/channel-picture/channel-16.jpeg"
+              />
+            </div>
+            <div class="video-info">
+              <p class="video-title">
+                <a href="https://youtu.be/fNVa1qMbF9Y?si=gUm2GkZNwqC1CGhB">
+                  Why Planes Don't Fly Over Tibet
+                </a>
+              </p>
+              <p class="video-author">RealLifeLore</p>
+              <p class="video-stats">8.4M views &#183; 5 years ago</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-preview">
+          <div class="thumbnail-row">
+            <a href="https://youtu.be/lFm4EM1juls?si=1w5z39CoOfQ1UbEt">
+              <img class="thumbnail" src="/thumbnails/thumbnail-17.webp" />
+            </a>
+            <div class="video-time">7:13</div>
+          </div>
+
+          <div class="video-info-grid">
+            <div class="channel-picture">
+              <a href="https://youtu.be/lFm4EM1juls?si=1w5z39CoOfQ1UbEt">
+                <img
+                  class="profile-picture"
+                  src="/channel-picture/channel-17.jpeg"
+                />
+              </a>
+            </div>
+            <div class="video-info">
+              <p class="video-title">
+                <a href="https://youtu.be/lFm4EM1juls?si=1w5z39CoOfQ1UbEt">
+                  Inside The World's Biggest Passenger Plane
+                </a>
+              </p>
+              <p class="video-author">Tech Vision</p>
+              <p class="video-stats">9.9M views &#183; 5 years ago</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-preview">
+          <div class="thumbnail-row">
+            <a href="https://youtu.be/094y1Z2wpJg?si=XZrniUwY23ibe1uz"
+              ><img class="thumbnail" src="/thumbnails/thumbnail-18.webp"
+            /></a>
+            <div class="video-time">22:09</div>
+          </div>
+
+          <div class="video-info-grid">
+            <div class="channel-picture">
+              <a href="https://youtu.be/094y1Z2wpJg?si=XZrniUwY23ibe1uz">
+                <img
+                  class="profile-picture"
+                  src="/channel-picture/channel-18.jpeg"
+              /></a>
+            </div>
+            <div class="video-info">
+              <p class="video-title">
+                <a href="https://youtu.be/094y1Z2wpJg?si=XZrniUwY23ibe1uz">
+                  The Simplest Math Problem No One Can Solve - Collatz
+                  Conjecture
+                </a>
+              </p>
+              <p class="video-author">Veritasium</p>
+              <p class="video-stats">45M views &#183; 4 years ago</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-preview">
+          <div class="thumbnail-row">
+            <a href="https://youtu.be/FgjPQQeTh1w?si=c1pKGyfQQOvr3i5v"
+              ><img class="thumbnail" src="/thumbnails/thumbnail-19.webp"
+            /></a>
+            <div class="video-time">9:13</div>
+          </div>
+          <div class="video-info-grid">
+            <div class="channel-picture">
+              <img
+                class="profile-picture"
+                src="/channel-picture/channel-19.jpeg"
+              />
+            </div>
+            <div class="video-info">
+              <p class="video-title">
+                <a href="https://youtu.be/FgjPQQeTh1w?si=c1pKGyfQQOvr3i5v">
+                  Crazy Tik Toks Taken Moments Before DISASTER
+                </a>
+              </p>
+              <p class="video-author">SSSniperWolf</p>
+              <p class="video-stats">14M views &#183; 5 years ago</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="video-card">
+        <div class="video-preview">
+          <div class="thumbnail-row">
+            <a href="https://youtu.be/mP0RAo9SKZk?si=RX3hrKUEFPe6HbUP">
+              <img class="thumbnail" src="/thumbnails/thumbnail-20.webp" />
+            </a>
+            <div class="video-time">8:22</div>
+          </div>
+
+          <div class="video-info-grid">
+            <div class="channel-picture">
+              <img
+                class="profile-picture"
+                src="/channel-picture/channel-20.jpeg"
+              />
+            </div>
+            <div class="video-info">
+              <p class="video-title">
+                <a href="https://youtu.be/mP0RAo9SKZk?si=RX3hrKUEFPe6HbUP">
+                  Try Not To Laugh Challenge #9
+                </a>
+              </p>
+              <p class="video-author">Markiplier</p>
+              <p class="video-stats">19M views &#183; 4 years ago</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // CATEGORY SCROLL + ARROWS
+
+      const categoryBar = document.getElementById('category-scroll-track');
+      const scrollLeftBtn = document.getElementById('left-scroll-btn');
+      const scrollRightBtn = document.getElementById('right-scroll-btn');
+
+      if (categoryBar && scrollRightBtn) {
+        // Scroll buttons
+        scrollRightBtn.addEventListener('click', () => {
+          categoryBar.scrollBy({ left: 200, behavior: 'smooth' });
+        });
+
+        if (scrollLeftBtn) {
+          scrollLeftBtn.addEventListener('click', () => {
+            categoryBar.scrollBy({ left: -200, behavior: 'smooth' });
+          });
+        }
+
+        // Arrow visibility logic (merged + optimized)
+
+        const updateCategoryArrowState = () => {
+          const maxScrollLeft =
+            categoryBar.scrollWidth - categoryBar.clientWidth;
+
+          // Right arrow
+          if (
+            categoryBar.scrollLeft >= maxScrollLeft - 5 ||
+            maxScrollLeft <= 1
+          ) {
+            scrollRightBtn.style.opacity = '0';
+            scrollRightBtn.style.pointerEvents = 'none';
+          } else {
+            scrollRightBtn.style.opacity = '1';
+            scrollRightBtn.style.pointerEvents = 'auto';
+          }
+
+          // Left arrow
+          if (scrollLeftBtn) {
+            if (categoryBar.scrollLeft <= 5 || maxScrollLeft <= 1) {
+              scrollLeftBtn.style.opacity = '0';
+              scrollLeftBtn.style.pointerEvents = 'none';
+            } else {
+              scrollLeftBtn.style.opacity = '1';
+              scrollLeftBtn.style.pointerEvents = 'auto';
+            }
+          }
+        };
+
+        categoryBar.addEventListener('scroll', updateCategoryArrowState);
+        window.addEventListener('resize', updateCategoryArrowState);
+        window.addEventListener('load', updateCategoryArrowState);
+
+        updateCategoryArrowState();
+      }
+
+      // VIDEO CARD HOVER COLOR
+      const cards = document.querySelectorAll('.video-card');
+
+      function changeRandomDark() {
+        let red = Math.floor(Math.random() * 71 + 130);
+        let green = Math.floor(Math.random() * 71 + 130);
+        let blue = Math.floor(Math.random() * 71 + 130);
+        let alpha = 0.25;
+        return `rgba(${red}, ${green}, ${blue}, ${alpha})`;
+      }
+
+      cards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+          const randomColor = changeRandomDark();
+          card.style.setProperty('--hover-color', randomColor);
+        });
+      });
+
+      // SIDEBAR TOGGLE
+      const menuBtn = document.querySelector('.left-section .hamburger-menu');
+      const closeBtn = document.getElementById('close-sidebar-btn');
+      const expandedSidebar = document.getElementById('expanded-sidebar');
+      const sidebarOverlay = document.getElementById('sidebar-overlay');
+
+      const desktopBreakpoint = 991;
+
+      function syncSidebarLayoutMode() {
+        if (window.innerWidth <= desktopBreakpoint) {
+          document.body.classList.remove('sidebar-open');
+        }
+      }
+
+      function toggleSidebar() {
+        expandedSidebar.classList.toggle('active');
+        sidebarOverlay.classList.toggle('active');
+
+        if (window.innerWidth > desktopBreakpoint) {
+          document.body.classList.toggle('sidebar-open');
+        } else {
+          document.body.classList.remove('sidebar-open');
+        }
+      }
+
+      if (menuBtn) menuBtn.addEventListener('click', toggleSidebar);
+      if (closeBtn) closeBtn.addEventListener('click', toggleSidebar);
+      if (sidebarOverlay)
+        sidebarOverlay.addEventListener('click', toggleSidebar);
+
+      window.addEventListener('resize', syncSidebarLayoutMode);
+      syncSidebarLayoutMode();
+
+      // DARK MODE
+      const themeToggle = document.getElementById('theme-toggle');
+      const logos = document.querySelectorAll('.youtube-logo');
+
+      function updateThemeUI(isDarkMode) {
+        document.body.classList.toggle('dark-mode', isDarkMode);
+
+        logos.forEach(logo => {
+          const lightLogo = logo.getAttribute('data-light-logo');
+          const darkLogo = logo.getAttribute('data-dark-logo');
+          logo.src = isDarkMode ? darkLogo : lightLogo;
+        });
+      }
+
+      if (themeToggle) {
+        themeToggle.addEventListener('change', function () {
+          updateThemeUI(this.checked);
+        });
+      }
+    </script>
+  </body>
+</html>

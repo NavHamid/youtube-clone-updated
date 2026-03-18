@@ -1,0 +1,124 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, Arial, sans-serif;
+  background-color: #fff;
+  color: #0f0f0f;
+  padding-top: 112px;
+  padding-left: 96px;
+  padding-right: 24px;
+  transition: padding-left 0.3s ease;
+}
+
+body.sidebar-open {
+  padding-left: 264px;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+body.dark-mode {
+  background-color: #0f0f0f;
+  color: #fff;
+}
+
+body.dark-mode header,
+body.dark-mode .sidebar,
+body.dark-mode .category-bar,
+body.dark-mode .expanded-sidebar,
+body.dark-mode .sidebar-link {
+  background-color: #0f0f0f;
+}
+
+body.dark-mode header,
+body.dark-mode .category-bar {
+  border-bottom-color: transparent;
+}
+
+body.dark-mode .sidebar-divider {
+  border-top-color: #3f3f3f;
+}
+
+body.dark-mode .video-title a,
+body.dark-mode .expanded-link,
+body.dark-mode .sidebar-title,
+body.dark-mode .sidebar-link div,
+body.dark-mode .bottom-toggle-container {
+  color: #fff;
+}
+
+body.dark-mode .video-author,
+body.dark-mode .video-stats {
+  color: #aaa;
+}
+
+body.dark-mode .search-button,
+body.dark-mode .voice-search-button {
+  background-color: #222;
+  border-color: #303030;
+}
+
+body.dark-mode .Search-bar {
+  background-color: #121212;
+  color: #fff;
+  border-color: #303030;
+  box-shadow: none;
+}
+
+body.dark-mode .Search-bar::placeholder {
+  color: #a9a9a9;
+}
+
+body.dark-mode .search-left-icon img {
+  filter: invert(1);
+}
+
+body.dark-mode .country-code {
+  color: #d0d0d0;
+}
+
+body.dark-mode .expanded-link:hover,
+body.dark-mode .sidebar-link:hover {
+  background-color: #272727;
+}
+
+body.dark-mode .search-button:hover,
+body.dark-mode .voice-search-button:hover {
+  background-color: #3f3f3f;
+}
+
+body.dark-mode .hamburger-menu:hover,
+body.dark-mode .upload-icon-container:hover,
+body.dark-mode .youtube-apps-icon-container:hover,
+body.dark-mode .notifications-icon-container:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .search-button .tooltip,
+body.dark-mode .voice-search-button .tooltip,
+body.dark-mode .upload-icon-container .tooltip,
+body.dark-mode .youtube-apps-icon-container .tooltip,
+body.dark-mode .notifications-icon-container .tooltip {
+  background-color: #555;
+}
+
+body.dark-mode img[src$='.svg']:not(.youtube-logo) {
+  filter: invert(1);
+}
+
+body.dark-mode img[src$='.svg'].youtube-logo {
+  filter: none;
+}
+
+body.dark-mode i.fa-solid,
+body.dark-mode i.fa-regular {
+  color: #fff;
+}
